@@ -63,7 +63,7 @@ export function HeroSection() {
               <StatCard
                 number={1}
                 label="Year Of Experience"
-                color="text-navy-400"
+                color="text-fuchsia-400"
               />
               <StatCard
                 number={"5+"}

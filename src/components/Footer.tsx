@@ -75,7 +75,7 @@ export function Footer() {
         {/* Bottom decoration */}
         <div className="mt-8 pt-8 border-t border-gray-800 text-center">
           <p className="text-sm text-gray-500">
-            {`{tagline or additional footer text}`}
+            {`Built with passion, for users.`}
           </p>
         </div>
       </div>

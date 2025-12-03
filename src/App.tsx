@@ -1,10 +1,11 @@
-import { HeroSection } from './components/HeroSection';
-import { ServicesSection } from './components/ServicesSection';
-import { PortfolioSection } from './components/PortfolioSection';
-import { AboutSection } from './components/AboutSection';
-import { TestimonialsSection } from './components/TestimonialsSection';
-import { ContactSection } from './components/ContactSection';
-import { Footer } from './components/Footer';
+import React from "react";
+import { HeroSection } from "./components/HeroSection";
+import { ServicesSection } from "./components/ServicesSection";
+import { PortfolioSection } from "./components/PortfolioSection";
+import { AboutSection } from "./components/AboutSection";
+import { TestimonialsSection } from "./components/TestimonialsSection";
+import { ContactSection } from "./components/ContactSection";
+import { Footer } from "./components/Footer";
 
 export default function App() {
   return (
@@ -13,7 +14,7 @@ export default function App() {
       <ServicesSection />
       <PortfolioSection />
       <AboutSection />
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
       <ContactSection />
       <Footer />
     </div>

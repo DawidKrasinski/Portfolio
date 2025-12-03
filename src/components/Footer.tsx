@@ -1,10 +1,5 @@
-import {
-  Github,
-  Linkedin,
-  Twitter,
-  Mail,
-  Heart,
-} from "lucide-react";
+import React from "react";
+import { Github, Linkedin, Twitter, Mail, Heart } from "lucide-react";
 
 export function Footer() {
   const socialLinks = [
@@ -23,12 +18,11 @@ export function Footer() {
           {/* Left side - Copyright */}
           <div className="text-center md:text-left">
             <p className="text-gray-400">
-              {`{small text describing copyright}`}
+              {`© 2025 Dawid Krasinski. Built with passion and clean code.`}
             </p>
             <p className="text-sm text-gray-500 mt-2 flex items-center justify-center md:justify-start gap-1">
-              {`{additional text}`}{" "}
-              <Heart className="w-4 h-4 text-pink-400" />{" "}
-              {`{more text}`}
+              {`Designed and developed by me.`}
+              <Heart className="w-4 h-4 text-pink-400" /> {`Powered by React`}
             </p>
           </div>
 
@@ -38,25 +32,25 @@ export function Footer() {
               href="#"
               className="text-gray-400 hover:text-cyan-400 transition-colors"
             >
-              {`{link: Services}`}
+              {`Services`}
             </a>
             <a
               href="#"
               className="text-gray-400 hover:text-cyan-400 transition-colors"
             >
-              {`{link: Portfolio}`}
+              {`Portfolio`}
             </a>
             <a
               href="#"
               className="text-gray-400 hover:text-cyan-400 transition-colors"
             >
-              {`{link: About}`}
+              {`About`}
             </a>
             <a
               href="#"
               className="text-gray-400 hover:text-cyan-400 transition-colors"
             >
-              {`{link: Contact}`}
+              {`Contact`}
             </a>
           </div>
 

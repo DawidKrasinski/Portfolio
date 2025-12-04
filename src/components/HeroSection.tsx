@@ -1,6 +1,12 @@
 import React from "react";
 import { Code2, ArrowRight } from "lucide-react";
 
+type Props = {
+  handleScrollFn: (Ref: React.RefObject<HTMLElement>) => void
+  contactSectionRef: React.RefObject<HTMLElement | null>
+  portfolioSectionRef: React.RefObject<HTMLElement | null>
+}
+
 const StatCard = ({ number, label, color }) => (
   <div>
     <div className={`text-3xl ${color}`}>{number}</div>
@@ -8,7 +14,7 @@ const StatCard = ({ number, label, color }) => (
   </div>
 );
 
-export function HeroSection() {
+export function HeroSection(props: Props) {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden border-b border-cyan-500/20">
       {/* Animated grid background */}
@@ -38,12 +44,12 @@ export function HeroSection() {
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
-              <button className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 transition-all duration-300 rounded-lg flex items-center gap-2 shadow-lg shadow-cyan-500/50">
+              <button onClick={() => props.handleScrollFn(props.contactSectionRef)} className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 transition-all duration-300 rounded-lg flex items-center gap-2 shadow-lg shadow-cyan-500/50">
                 {`Let's Build`}
                 <ArrowRight className="w-5 h-5" />
               </button>
 
-              <button className="px-8 py-4 border-2 border-cyan-500/50 hover:border-cyan-400 hover:bg-cyan-500/10 transition-all duration-300 rounded-lg">
+              <button onClick={() => props.handleScrollFn(props.portfolioSectionRef)} className="px-8 py-4 border-2 border-cyan-500/50 hover:border-cyan-400 hover:bg-cyan-500/10 transition-all duration-300 rounded-lg">
                 {`See My Work`}
               </button>
             </div>

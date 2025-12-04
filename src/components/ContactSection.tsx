@@ -1,9 +1,9 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import { Mail, Calendar, Send } from "lucide-react";
 
-export function ContactSection() {
+export const ContactSection = forwardRef<HTMLElement>((props, ref) => {
   return (
-    <section className="py-24 border-t border-cyan-500/20 relative">
+    <section ref={ref} className="py-24 border-t border-cyan-500/20 relative">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[40rem] h-[40rem] bg-cyan-500/10 rounded-full blur-3xl"></div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -118,3 +118,4 @@ export function ContactSection() {
     </section>
   );
 }
+) 

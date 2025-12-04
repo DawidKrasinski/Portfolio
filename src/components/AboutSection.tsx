@@ -5,7 +5,7 @@ export function AboutSection() {
   const techStack = {
     frontend: ["HTML", "CSS / Tailwind CSS", "JavaScript", "React / Next.js"],
     backend: ["Node.js", "TypeScript", "MySQL", "TypeORM"],
-    tools: ["Git & GitHub", "Figma (UI Implementation)", "REST APIs"],
+    tools: ["Git & GitHub", "Figma (UI Implementation)", "REST APIs", "Vite"],
   };
 
   return (

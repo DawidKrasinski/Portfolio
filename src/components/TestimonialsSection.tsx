@@ -47,7 +47,7 @@ export function TestimonialsSection() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className={`p-8 bg-gradient-to-br ${testimonial.gradient} backdrop-blur-sm border border-gray-800 rounded-2xl hover:border-cyan-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/20 relative`}
+              className={`p-8 bg-linear-to-br ${testimonial.gradient} backdrop-blur-sm border border-gray-800 rounded-2xl hover:border-cyan-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/20 relative`}
             >
               <Quote className="w-12 h-12 text-cyan-400/30 mb-4" />
 
@@ -56,7 +56,7 @@ export function TestimonialsSection() {
               </p>
 
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-purple-500 rounded-full flex items-center justify-center">
+                <div className="w-12 h-12 bg-linear-to-br from-cyan-500 to-purple-500 rounded-full flex items-center justify-center">
                   <span>{`{initials}`}</span>
                 </div>
                 <div>

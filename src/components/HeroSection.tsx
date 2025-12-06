@@ -2,10 +2,10 @@ import React from "react";
 import { Code2, ArrowRight } from "lucide-react";
 
 type Props = {
-  handleScrollFn: (Ref: React.RefObject<HTMLElement>) => void
-  contactSectionRef: React.RefObject<HTMLElement | null>
-  portfolioSectionRef: React.RefObject<HTMLElement | null>
-}
+  handleScrollFn: (Ref: React.RefObject<HTMLElement | null>) => void;
+  contactSectionRef: React.RefObject<HTMLElement | null>;
+  portfolioSectionRef: React.RefObject<HTMLElement | null>;
+};
 
 const StatCard = ({ number, label, color }) => (
   <div>
@@ -18,7 +18,7 @@ export function HeroSection(props: Props) {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden border-b border-cyan-500/20">
       {/* Animated grid background */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-size-[4rem_4rem] opacity-20"></div>
 
       {/* Neon glow effects */}
       <div className="absolute top-1/4 -right-48 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl"></div>
@@ -34,7 +34,7 @@ export function HeroSection(props: Props) {
             </div>
 
             <h1 className="text-5xl md:text-6xl lg:text-7xl">
-              <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                 {`I’m a Frontend Developer turning ideas into fast and reliable websites.`}
               </span>
             </h1>
@@ -44,12 +44,18 @@ export function HeroSection(props: Props) {
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
-              <button onClick={() => props.handleScrollFn(props.contactSectionRef)} className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 transition-all duration-300 rounded-lg flex items-center gap-2 shadow-lg shadow-cyan-500/50">
+              <button
+                onClick={() => props.handleScrollFn(props.contactSectionRef)}
+                className="px-8 py-4 bg-linear-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 transition-all duration-300 rounded-lg flex items-center gap-2 shadow-lg shadow-cyan-500/50"
+              >
                 {`Let's Build`}
                 <ArrowRight className="w-5 h-5" />
               </button>
 
-              <button onClick={() => props.handleScrollFn(props.portfolioSectionRef)} className="px-8 py-4 border-2 border-cyan-500/50 hover:border-cyan-400 hover:bg-cyan-500/10 transition-all duration-300 rounded-lg">
+              <button
+                onClick={() => props.handleScrollFn(props.portfolioSectionRef)}
+                className="px-8 py-4 border-2 border-cyan-500/50 hover:border-cyan-400 hover:bg-cyan-500/10 transition-all duration-300 rounded-lg"
+              >
                 {`See My Work`}
               </button>
             </div>
@@ -73,7 +79,7 @@ export function HeroSection(props: Props) {
               />
               <StatCard
                 number={"5+"}
-                label="Technologies Mastered"
+                label="Technologies Learned"
                 color="text-purple-400"
               />
               <StatCard
@@ -87,7 +93,7 @@ export function HeroSection(props: Props) {
           {/* Right content - Tech illustration */}
           <div className="relative">
             <div className="relative z-10">
-              <div className="bg-gradient-to-br from-gray-900 to-gray-800 p-8 rounded-2xl border border-cyan-500/30 shadow-2xl shadow-cyan-500/20">
+              <div className="bg-linear-to-r from-gray-900 to-gray-800 p-8 rounded-2xl border border-cyan-500/30 shadow-2xl shadow-cyan-500/20">
                 {/* Code editor mockup */}
                 <div className="space-y-4">
                   {/* Editor header */}

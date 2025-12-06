@@ -1,5 +1,5 @@
 import React from "react";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Code2 } from "lucide-react";
 
 export function AboutSection() {
   const techStack = {
@@ -13,11 +13,11 @@ export function AboutSection() {
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-16 items-center">
           {/* Left side - Image/Visual */}
           <div className="relative">
             <div className="relative z-10">
-              <div className="bg-gradient-to-br from-gray-900 to-gray-800 p-8 rounded-2xl border border-purple-500/30 shadow-2xl shadow-purple-500/20">
+              <div className="bg-linear-to-br from-gray-900 to-gray-800 p-8 rounded-2xl border border-purple-500/30 shadow-2xl shadow-purple-500/20">
                 {/* Terminal mockup */}
                 <div className="space-y-4">
                   <div className="flex items-center gap-2 pb-4 border-b border-gray-700">
@@ -35,25 +35,22 @@ export function AboutSection() {
                       <span className="text-gray-300">{`whoami`}</span>
                     </div>
                     <div className="pl-4 text-gray-400">
-                      <div>{`Dawid Krasinski — Frontend Developer`}</div>
-                      <div>{`{output line 2}`}</div>
-                      <div>{`{output line 3}`}</div>
+                      <div>{`1. Dawid Krasinski — Frontend Developer`}</div>
+                      <div>{`2. I build modern, responsive interfaces and love clean code.`}</div>
+                      <div>{`3. Constantly improving my skills and exploring new technologies to craft better digital experiences.`}</div>
                     </div>
                     <div className="flex gap-2">
                       <span className="text-cyan-400">$</span>
-                      <span className="text-gray-300">{`{another command}`}</span>
+                      <span className="text-gray-300">{`upgrade --level senior`}</span>
                     </div>
                     <div className="pl-4 text-green-400">
-                      {`{success message}`}
+                      {`progress saved: path unlocked`}
                     </div>
                   </div>
                 </div>
               </div>
-
-              {/* Floating badge */}
-              <div className="absolute -bottom-6 -right-6 bg-gradient-to-r from-cyan-500 to-purple-500 text-gray-900 px-6 py-4 rounded-xl shadow-2xl shadow-purple-500/50">
-                <div className="text-2xl">{`{years/stat}`}</div>
-                <div className="text-sm">{`{label}`}</div>
+              <div className="absolute -bottom-6 -right-4 bg-purple-500 text-gray-900 px-4 py-2 rounded-lg shadow-lg shadow-purple-500/50 animate-bounce">
+                <Code2 className="w-6 h-6" />
               </div>
             </div>
           </div>

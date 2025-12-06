@@ -72,9 +72,9 @@ export const PortfolioSection = forwardRef<HTMLElement>((props, ref) => {
             >
               {/* Project thumbnail/header with gradient */}
               <div
-                className={`h-48 bg-gradient-to-br ${project.gradient} relative overflow-hidden`}
+                className={`h-48 bg-linear-to-br ${project.gradient} relative overflow-hidden`}
               >
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:2rem_2rem] opacity-20"></div>
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-size-[2rem_2rem] opacity-20"></div>
                 <div className="absolute inset-0 flex items-center justify-center opacity-50 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="w-24 h-24 border-4 border-white/30 rounded-lg rotate-12 group-hover:rotate-0 transition-transform duration-300"></div>
                 </div>
@@ -116,5 +116,4 @@ export const PortfolioSection = forwardRef<HTMLElement>((props, ref) => {
       </div>
     </section>
   );
-}
-)
+});

@@ -4,7 +4,7 @@ import { Mail, Calendar, Send } from "lucide-react";
 export const ContactSection = forwardRef<HTMLElement>((props, ref) => {
   return (
     <section ref={ref} className="py-24 border-t border-cyan-500/20 relative">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[40rem] h-[40rem] bg-cyan-500/10 rounded-full blur-3xl"></div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-160 h-160 bg-cyan-500/10 rounded-full blur-3xl"></div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto">
@@ -59,7 +59,7 @@ export const ContactSection = forwardRef<HTMLElement>((props, ref) => {
 
                 <button
                   type="submit"
-                  className="w-full px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 transition-all duration-300 rounded-lg flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/50"
+                  className="w-full px-8 py-4 bg-linear-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 transition-all duration-300 rounded-lg flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/50"
                 >
                   {`Submit`}
                   <Send className="w-5 h-5" />
@@ -71,7 +71,7 @@ export const ContactSection = forwardRef<HTMLElement>((props, ref) => {
             <div className="space-y-6">
               <div className="bg-gray-900/50 backdrop-blur-sm border border-purple-500/30 rounded-2xl p-8 hover:border-purple-500/50 transition-colors duration-300">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center shrink-0">
                     <Mail className="w-6 h-6 text-purple-400" />
                   </div>
                   <div>
@@ -89,7 +89,7 @@ export const ContactSection = forwardRef<HTMLElement>((props, ref) => {
 
               <div className="bg-gray-900/50 backdrop-blur-sm border border-pink-500/30 rounded-2xl p-8 hover:border-pink-500/50 transition-colors duration-300">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-pink-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-pink-500/10 rounded-lg flex items-center justify-center shrink-0">
                     <Calendar className="w-6 h-6 text-pink-400" />
                   </div>
                   <div>
@@ -105,7 +105,7 @@ export const ContactSection = forwardRef<HTMLElement>((props, ref) => {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-cyan-500/10 to-purple-500/10 border border-cyan-500/30 rounded-2xl p-8">
+              <div className="bg-linear-to-r from-cyan-500/10 to-purple-500/10 border border-cyan-500/30 rounded-2xl p-8">
                 <h3 className="text-xl mb-3">{`Availability & Working Hours`}</h3>
                 <p className="text-gray-400 leading-relaxed">
                   {`I’m available for freelance projects and collaborations. I work in the CET timezone and usually respond the same day or within a few hours.`}
@@ -117,5 +117,4 @@ export const ContactSection = forwardRef<HTMLElement>((props, ref) => {
       </div>
     </section>
   );
-}
-) 
+});

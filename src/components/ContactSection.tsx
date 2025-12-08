@@ -1,7 +1,42 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef, useRef, useState } from "react";
 import { Mail, Calendar, Send } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 export const ContactSection = forwardRef<HTMLElement>((props, ref) => {
+  const [formData, setFormData] = useState({
+    name: "",
+    gmail: "",
+    description: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+    console.log(formData);
+  };
+
+  const sendEmail = (e) => {
+    e.preventDefault(); // zatrzymuje odświeżanie strony
+
+    emailjs
+      .send(
+        "service_5zvpylq", // np. service_xxxxx
+        "template_vutp8bj", // np. template_xxxxx
+        formData,
+        "mhX_fa3WAJL3agjFu" // np. user_xxxxx
+      )
+      .then(
+        (result) => {
+          console.log("Sent:", result.text);
+          alert("Email send!");
+          setFormData({ name: "", gmail: "", description: "" });
+        },
+        (error) => {
+          console.log("Error:", error.text);
+          alert("Error while sending email");
+        }
+      );
+  };
+
   return (
     <section ref={ref} className="py-24 border-t border-cyan-500/20 relative">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-160 h-160 bg-cyan-500/10 rounded-full blur-3xl"></div>
@@ -23,13 +58,15 @@ export const ContactSection = forwardRef<HTMLElement>((props, ref) => {
           <div className="grid md:grid-cols-2 gap-8">
             {/* Contact Form */}
             <div className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/30 rounded-2xl p-8">
-              <form className="space-y-6">
+              <form onSubmit={sendEmail} className="space-y-6">
                 <div>
                   <label className="block text-sm text-gray-400 mb-2">
                     {`Name`}
                   </label>
                   <input
                     type="text"
+                    onChange={handleChange}
+                    name="name"
                     placeholder="Name"
                     className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:outline-none focus:border-cyan-500 transition-colors duration-300 text-white placeholder-gray-500"
                   />
@@ -40,6 +77,8 @@ export const ContactSection = forwardRef<HTMLElement>((props, ref) => {
                     {`Email`}
                   </label>
                   <input
+                    onChange={handleChange}
+                    name="gmail"
                     type="email"
                     placeholder="Email"
                     className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:outline-none focus:border-cyan-500 transition-colors duration-300 text-white placeholder-gray-500"
@@ -52,6 +91,8 @@ export const ContactSection = forwardRef<HTMLElement>((props, ref) => {
                   </label>
                   <textarea
                     rows={5}
+                    onChange={handleChange}
+                    name="description"
                     placeholder="Project Description"
                     className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:outline-none focus:border-cyan-500 transition-colors duration-300 text-white placeholder-gray-500 resize-none"
                   />

@@ -1,8 +1,9 @@
 {
-      "name": "Dark-Mode Portfolio Website",
+      "name": "dark-mode-portfolio-website",
       "version": "0.1.0",
       "private": true,
       "dependencies": {
+            "@emailjs/browser": "^4.4.1",
             "@radix-ui/react-accordion": "^1.2.3",
             "@radix-ui/react-alert-dialog": "^1.1.6",
             "@radix-ui/react-aspect-ratio": "^1.1.2",
@@ -29,13 +30,17 @@
             "@radix-ui/react-toggle": "^1.1.2",
             "@radix-ui/react-toggle-group": "^1.1.2",
             "@radix-ui/react-tooltip": "^1.1.8",
+            "body-parser": "^2.2.1",
             "class-variance-authority": "^0.7.1",
             "clsx": "*",
             "cmdk": "^1.1.1",
+            "cors": "^2.8.5",
             "embla-carousel-react": "^8.6.0",
+            "express": "^5.2.1",
             "input-otp": "^1.4.2",
             "lucide-react": "^0.487.0",
             "next-themes": "^0.4.6",
+            "nodemailer": "^7.0.11",
             "react": "^18.3.1",
             "react-day-picker": "^8.10.1",
             "react-dom": "^18.3.1",
@@ -58,5 +63,19 @@
       "scripts": {
             "dev": "vite",
             "build": "vite build"
-      }
+      },
+      "description": "This is a code bundle for Dark-Mode Portfolio Website. The original project is available at https://www.figma.com/design/oySYVsbMFHdM1STOMiLyU0/Dark-Mode-Portfolio-Website.",
+      "main": "index.js",
+      "repository": {
+            "type": "git",
+            "url": "git+https://github.com/DawidKrasinski/Portfolio.git"
+      },
+      "keywords": [],
+      "author": "",
+      "license": "ISC",
+      "type": "commonjs",
+      "bugs": {
+            "url": "https://github.com/DawidKrasinski/Portfolio/issues"
+      },
+      "homepage": "https://github.com/DawidKrasinski/Portfolio#readme"
 }

@@ -5,8 +5,8 @@ import emailjs from "@emailjs/browser";
 export const ContactSection = forwardRef<HTMLElement>((props, ref) => {
   const [formData, setFormData] = useState({
     name: "",
-    gmail: "",
-    description: "",
+    email: "",
+    content: "",
   });
 
   const handleChange = (e) => {
@@ -16,6 +16,11 @@ export const ContactSection = forwardRef<HTMLElement>((props, ref) => {
 
   const sendEmail = (e) => {
     e.preventDefault(); // zatrzymuje odświeżanie strony
+
+    if (!formData.content || !formData.email || !formData.name) {
+      alert("Your email is incomplete. Please fill in all required fields.");
+      return null;
+    }
 
     emailjs
       .send(
@@ -28,7 +33,7 @@ export const ContactSection = forwardRef<HTMLElement>((props, ref) => {
         (result) => {
           console.log("Sent:", result.text);
           alert("Email send!");
-          setFormData({ name: "", gmail: "", description: "" });
+          setFormData({ name: "", email: "", content: "" });
         },
         (error) => {
           console.log("Error:", error.text);
@@ -65,6 +70,7 @@ export const ContactSection = forwardRef<HTMLElement>((props, ref) => {
                   </label>
                   <input
                     type="text"
+                    value={formData.name}
                     onChange={handleChange}
                     name="name"
                     placeholder="Name"
@@ -78,7 +84,8 @@ export const ContactSection = forwardRef<HTMLElement>((props, ref) => {
                   </label>
                   <input
                     onChange={handleChange}
-                    name="gmail"
+                    value={formData.email}
+                    name="email"
                     type="email"
                     placeholder="Email"
                     className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:outline-none focus:border-cyan-500 transition-colors duration-300 text-white placeholder-gray-500"
@@ -91,9 +98,10 @@ export const ContactSection = forwardRef<HTMLElement>((props, ref) => {
                   </label>
                   <textarea
                     rows={5}
+                    value={formData.content}
                     onChange={handleChange}
-                    name="description"
-                    placeholder="Project Description"
+                    name="content"
+                    placeholder="Project content"
                     className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:outline-none focus:border-cyan-500 transition-colors duration-300 text-white placeholder-gray-500 resize-none"
                   />
                 </div>

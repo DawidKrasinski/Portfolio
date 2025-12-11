@@ -23,8 +23,7 @@ export default function App() {
         portfolioSectionRef={portfolioSectionRef}
         contactSectionRef={contactSectionRef}
         handleScrollFn={scrollToSection}
-      />{" "}
-      {/* function */}
+      />
       <ServicesSection />
       <PortfolioSection ref={portfolioSectionRef} /> {/* ref */}
       <AboutSection />
